@@ -7,22 +7,20 @@
     <link rel="stylesheet" href="/public/styles/base.css">
 </head>
 <body>
-    <header>searches</header>
+    <header>Final results</header>
+    <div>
 
-    <form action="">
-    <input type="text" name="searchingtype" >
-    <br>
-    <label >Author
-        <input type="radio" name="author">
-        </label>
-        <br>
-<label >Title
-<input type="radio" name="name">
-</label>
-<br>
-<button>search</button>
-
-
-</form>
+        <ul>
+            <% book.forEach(book => { %>
+            <li>
+                <p><%= book.title %></p>
+                <p><img src=<%= book.img_url %>></p>
+                <p><%= book.authors%></p>
+                <p><%= book.description%></p>
+            </li>
+            <% }) %>
+        </ul>
+    </div>
+    
 </body>
 </html>
