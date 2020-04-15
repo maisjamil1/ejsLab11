@@ -47,6 +47,9 @@ app.get('/searches/new',(req,res)=>{
 
 
 //___________________________________________________________
+
+
+
 app.post('/searches', (request, response) => {
        
   let bookAPI = `https://www.googleapis.com/books/v1/volumes?q=${request.body.searchingtext}+in${request.body.searchingtype}`
@@ -76,7 +79,7 @@ function Book(ele) {
 }
 
 app.get('/books/:book_id', (req, res) => {
-  const SQL = 'SELECT * FROM books WHERE id=$1;'
+  const SQL = 'SELECT * FROM books WHERE id=$1;';
   console.log(req.params);
   console.log(req.params.book_id);
   const values = [req.params.book_id];
@@ -94,15 +97,6 @@ app.get('/books/:book_id', (req, res) => {
 
 
 
-app.post('/books', (req, res)=> {
-  const { title,authors,isbn,image_url,description,bookshelf } = req.body;
-  const SQL = 'INSERT INTO books (author,title,isbn,image_url,description,bookshelf) VALUES ($1,$2,$3,$4,$5,$6);';
-  const value = [title,authors,isbn,image_url,description,bookshelf];
-  client.query(SQL, value).then((results) => {
-      // res.redirect('pages/books/show'), {book : value});
-      res.redirect('pages/books/show', {book : value});
-  }).catch((err) => errorHandler(err, req, res));
-})
 
 
 
