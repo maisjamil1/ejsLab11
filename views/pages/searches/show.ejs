@@ -7,16 +7,25 @@
     <link rel="stylesheet" href="/public/styles/base.css">
 </head>
 <body>
-    <header>Final results</header>
+    <header>
+        <h1>hello world</h1>
+        <nav>
+            <li><a href="/">Home</a></li>
+            <li><a href="/searches/new">search</a></li>
+        </nav>  
+    </header>
     <div>
 
         <ul>
             <% book.forEach(book => { %>
             <li>
+                <form action="/books" method="POST">
                 <p><%= book.title %></p>
                 <p><img src=<%= book.img_url %>></p>
                 <p><%= book.authors%></p>
                 <p><%= book.description%></p>
+                <button type="submit">Select this Book</button>
+            </form>
             </li>
             <% }) %>
         </ul>

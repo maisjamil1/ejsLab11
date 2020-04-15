@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>hello world</h1>
+        <nav>
+            <li><a href="/">Home</a></li>
+            <li><a href="/searches/new">search</a></li>
+        </nav>  
+    </header>
+
+    <section>
+        <img src="<%=book.image_url%>">
+        <h2><%=book.title%></h2>
+        <h3><%=book.author%></h3>
+        <ul>
+            <li><%=book.bookshelf%></li>
+            <li><%=book.description%></li>
+            <li><%=book.isbn%></li>
+        </ul>
+    </section>
+
+</body>
+
+</html>
