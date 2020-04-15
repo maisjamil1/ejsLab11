@@ -7,8 +7,28 @@
     <link rel="stylesheet" href="/public/styles/base.css">
 </head>
 <body>
-    <header>Hello World..</header>
-    <p><a href="/search/show">search</a></p>
+    <header>
+        <h1>hello world </h1>
+        <nav>
+            <li><a href="/">Home</a></li>
+            <li><a href="/searches/new">search</a></li>
+        </nav> 
+    </header>
     
+    <p><a href="/search/show">search</a></p>
+   
+        <h2><%=books.length%> </h2>
+    
+    <ul>
+        <% books.forEach(book => { %>
+        <li>
+            <p><%= book.title %></p>
+            <p><img src=<%= book.image_url %>></p>
+            <p><%= book.authors%></p>
+            <p><%= book.description%></p>
+            <a class="btn" href="/books/<%=book.id%>">View Details</a>
+        </li>
+        <% }) %>
+    </ul>
 </body>
 </html>
